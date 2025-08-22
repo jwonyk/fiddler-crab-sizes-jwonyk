@@ -13,5 +13,14 @@ library(janitor)
 library(here)
 library(tidyr)
 library(dplyr)
+library(lubridate)
+library(usethis)
+library(metajam)
+
+```
+
+
+```{r}
+head(pie_crab)
 ```
 
