@@ -2,11 +2,10 @@
 title: "Fiddler crabs and Bergmann’s rule"
 author: "J"
 format: html
+execute: 
+  echo: false
 ---
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-# install.packages("lterdatasampler")
-
 library(lterdatasampler)
 library(tidyverse)
 library(janitor)
@@ -16,12 +15,18 @@ library(dplyr)
 library(lubridate)
 library(usethis)
 library(metajam)
-
 ```
 
 ```{r}
-crab_data <- pie_crab %>% 
-  ggplot(aes(x = latitude, y = size)) +
+#| fig-cap: "this is my caption"
+
+crab_data <- pie_crab %>%
+  group_by(site) %>% 
+  summarise(mean = round(mean(size, na.rm = TRUE), 2), 
+            std = round(sd(size, na.rm = TRUE), 2),
+            ss = n())
+
+ggplot(data = pie_crab, aes(x = latitude, y = size)) +
   geom_point()
 
 crab_data
