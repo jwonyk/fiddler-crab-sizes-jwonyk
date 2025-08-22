@@ -19,8 +19,11 @@ library(metajam)
 
 ```
 
-
 ```{r}
-head(pie_crab)
+crab_data <- pie_crab %>% 
+  ggplot(aes(x = latitude, y = size)) +
+  geom_point()
+
+crab_data
 ```
 
