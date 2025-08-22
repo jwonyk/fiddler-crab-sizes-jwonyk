@@ -1,6 +1,7 @@
 ---
-title: "Fiddler crabs and Bergmann’s rule"
-author: "J"
+title: "Fiddler Crabs and Bergmann’s Rule"
+subtitle: "Explanatory Plots with Fiddler Crab Carapace Widths observed at the Different Lattitude and Summary Table of Mean, Standard Deviation, and Sample Size"
+author: "J & Richie"
 format: html
 execute: 
   echo: false
@@ -18,8 +19,6 @@ library(metajam)
 ```
 
 ```{r}
-#| fig-cap: "this is my caption"
-
 crab_data <- pie_crab %>%
   group_by(site) %>% 
   summarise(mean = round(mean(size, na.rm = TRUE), 2), 
@@ -37,3 +36,6 @@ ggplot(data = pie_crab, aes(x = latitude, y = size)) +
 crab_data
 ```
 
+Johnson, D. 2019. Fiddler crab body size in salt marshes from Florida to Massachusetts, USA at PIE and VCR LTER and NOAA NERR sites during summer 2016. ver 1. Environmental Data Initiative. https://doi.org/10.6073/pasta/4c27d2e778d3325d3830a5142e3839bb (Accessed 2021-05-27).
+
+Johnson DS, Crowley C, Longmire K, Nelson J, Williams B, Wittyngham S. The fiddler crab, Minuca pugnax, follows Bergmann’s rule. Ecol Evol. 2019;00:1–9. https://doi.org/10.1002/ece3.5883
