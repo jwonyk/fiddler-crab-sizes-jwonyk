@@ -26,6 +26,11 @@ crab_data <- pie_crab %>%
             std = round(sd(size, na.rm = TRUE), 2),
             ss = n())
 
+crab_data <- crab_data %>% 
+  rename("avg_carapace_width(mm)" = mean,
+         "Standard Deviation" = std,
+         "Sample Size" = ss)
+
 ggplot(data = pie_crab, aes(x = latitude, y = size)) +
   geom_point()
 
