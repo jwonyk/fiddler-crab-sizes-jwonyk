@@ -1,0 +1,17 @@
+---
+title: "Fiddler crabs and Bergmann’s rule"
+author: "J"
+format: html
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages("lterdatasampler")
+
+library(lterdatasampler)
+library(tidyverse)
+library(janitor)
+library(here)
+library(tidyr)
+library(dplyr)
+```
+
